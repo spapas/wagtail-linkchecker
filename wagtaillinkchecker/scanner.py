@@ -125,7 +125,7 @@ def broken_link_scan(site, run_sync=False, verbosity=1):
             if verbosity > 1:
                 print(f"Checking {url}")
             ScanLink.objects.get(url=url, scan=scan)
-            return
+            # return
         except ScanLink.DoesNotExist:
             link = ScanLink.objects.create(url=page.full_url, page=page, scan=scan)
             link.check_link(run_sync, verbosity=verbosity)
